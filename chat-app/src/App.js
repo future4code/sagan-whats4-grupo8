@@ -5,7 +5,7 @@ import MainContainer from "./Components/MainContainer/MainContainer";
 import Footer from "./Components/Footer/Footer";
 import MessagesContainer from "./Components/MessagesContainer/MessagesContainer";
 import styled from "styled-components";
-import InputsAndButton from "./Components/InputsAndButton/InputsAndButton";
+import InputsAndButton from "./Components/InputsAndButtons/InputsAndButtons";
 
 const IndieFont = styled.span`
   padding: 0.45rem;
