@@ -7,19 +7,23 @@ import MessagesContainer from "./Components/MessagesContainer/MessagesContainer"
 import styled from "styled-components";
 
 const IndieFont = styled.span`
+  padding: 0.45rem;
+  border-radius: 5px;
   font-family: "Indie Flower", cursive;
   font-size: 1.1rem;
 `;
 
 const Margin = styled.p`
   margin: 0.25rem 0.3rem;
-  padding: 0.5rem;
-  background: #fff;
+  padding: 0.75rem;
+  border-radius: 10px;
+  text-align: left;
 `;
 
 const Messages = styled.div`
   displa: flex;
   flex-direction: column;
+  width: 100%;
 `;
 
 class App extends Component {
@@ -27,10 +31,11 @@ class App extends Component {
     super(props);
     this.state = {
       messages: [
-        { username: "lfvirtuoso", message: "Oi, tudo bem?" },
-        { username: "lfvirtuoso", message: "Tudo sim, e com você?" }
-      ],
-      teste: ["item", "item2"]
+        { username: "@lfvirtuoso", message: "Oi, tudo bem?" },
+        { username: "@thales123", message: "Tudo sim, e com você?" },
+        { username: "@lfvirtuoso", message: "O que está fazendo?" },
+        { username: "@Thales123", message: "Não te interessa!" }
+      ]
     };
   }
 
@@ -41,8 +46,14 @@ class App extends Component {
   render() {
     const showMessages = this.state.messages.map((el, index) => {
       return (
-        <Margin>
-          <IndieFont>{el.username}</IndieFont>:&nbsp;
+        <Margin
+          key={index}
+          className={index % 2 === 0 ? "bg-blue" : "bg-purple"}
+        >
+          <IndieFont className={index % 2 === 0 ? "bg-black" : "bg-grey"}>
+            {el.username}
+          </IndieFont>
+          &nbsp;
           {el.message}
         </Margin>
       );
@@ -56,6 +67,7 @@ class App extends Component {
             <Messages>{showMessages}</Messages>
           </MessagesContainer>
         </MainContainer>
+        <Footer />
       </div>
     );
   }

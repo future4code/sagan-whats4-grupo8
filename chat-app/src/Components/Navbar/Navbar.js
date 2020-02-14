@@ -14,7 +14,7 @@ const Navbar = () => {
   return (
     <NavContainer>
       <h1>
-        <i class="far fa-comment"></i> Future chat
+        <i className="far fa-comment"></i> Future chat
       </h1>
     </NavContainer>
   );
