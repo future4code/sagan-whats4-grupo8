@@ -1,10 +1,10 @@
 .bg-blue {
-  background: #e0ebff;
+  background: #cfe9ff;
   border: 1px dotted #85b0ff;
 }
 
-.bg-purple {
-  background: #d8d6ff;
+.bg-darker-blue {
+  background: #8ad8ff;
   border: 1px dotted #444;
 }
 

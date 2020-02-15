@@ -9,9 +9,11 @@ import InputsAndButton from "./Components/InputsAndButtons/InputsAndButtons";
 
 const IndieFont = styled.span`
   padding: 0.45rem;
-  border-radius: 5px;
+  border-radius: 10px;
   font-family: "Indie Flower", cursive;
   font-size: 1.1rem;
+  font-weight: bold;
+  // text-decoration: underline;
 `;
 
 const Margin = styled.p`
@@ -31,17 +33,20 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      messages: [
-        { username: "@lfvirtuoso", message: "Oi, tudo bem?" },
-        { username: "@thales123", message: "Tudo sim, e com você?" },
-        { username: "@lfvirtuoso", message: "O que está fazendo?" },
-        { username: "@Thales123", message: "Não te interessa!" }
-      ]
+      messages: []
     };
   }
 
   addMessage = (user, message) => {
-    this.setState({ messages: { username: user, message: message } });
+    if (user && message) {
+      const newMessage = [
+        ...this.state.messages,
+        { username: user, message: message }
+      ];
+      this.setState({ messages: newMessage });
+    } else {
+      alert("Preencha os campos corretamente!");
+    }
   };
 
   render() {
@@ -49,7 +54,7 @@ class App extends Component {
       return (
         <Margin
           key={index}
-          className={index % 2 === 0 ? "bg-blue" : "bg-purple"}
+          className={index % 2 === 0 ? "bg-blue" : "bg-darker-blue"}
         >
           <IndieFont className={index % 2 === 0 ? "bg-black" : "bg-grey"}>
             {el.username}
@@ -67,7 +72,7 @@ class App extends Component {
           <MessagesContainer>
             <Messages>{showMessages}</Messages>
           </MessagesContainer>
-          <InputsAndButton />
+          <InputsAndButton addMessage={this.addMessage} />
         </MainContainer>
         <Footer />
       </div>

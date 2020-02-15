@@ -8,6 +8,7 @@ const MessagesArea = styled.section`
   border: 1px dotted #444;
   width: 50%;
   height: 50vh;
+  overflow-y: auto;
 `;
 
 const MessagesContainer = props => {
