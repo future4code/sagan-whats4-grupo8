@@ -1,7 +1,7 @@
 <h1 align="center">
     <img alt="Future4 logo" src="future4blogo.png" />
     <br>
-    FutureTube
+    Future chat
 </h1>
 
 <h4 align="center">
