@@ -1,0 +1,19 @@
+.bg-blue {
+  background: #cfe9ff;
+  border: 1px dotted #85b0ff;
+}
+
+.bg-darker-blue {
+  background: #8ad8ff;
+  border: 1px dotted #444;
+}
+
+.bg-grey {
+  background: #444;
+  color: #f4f4f4;
+}
+
+.bg-black {
+  background: #444;
+  color: #f4f4f4;
+}
